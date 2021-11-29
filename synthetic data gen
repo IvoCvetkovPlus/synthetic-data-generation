@@ -1,0 +1,13 @@
+N = 20
+ftr = np.linspace(-10, 10, num=N) # ftr values
+tgt = 2*ftr**2 - 3 + np.random.uniform(-2, 2, N) # tgt = func(ftr)
+(train_ftr, test_ftr,
+train_tgt, test_tgt) = skms.train_test_split(ftr, tgt, test_size=N//2)
+display(pd.DataFrame({"ftr":train_ftr,
+"tgt":train_tgt}).T)
+
+
+################# When we develop a learning system, we might
+need some data that we completely control. Creating our own data allows us to control the
+true underlying relationship between the inputs and the outputs and to manipulate how
+noise affects that relationship.
